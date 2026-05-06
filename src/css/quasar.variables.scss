@@ -1,0 +1,49 @@
+/**
+ * Quasar Sass (& SCSS) Variables - Integración con Design System
+ * ================================================================
+ * Estos colores se alinean con el nuevo design system premium
+ * y mantienen compatibilidad total con Quasar
+ */
+
+// Paleta Principal (Indigo - Confianza & Profesionalismo)
+$primary   : #4f46e5;    // Indigo vibrante - Modernidad
+$secondary : #d946a1;    // Magenta - Creatividad & Energía
+$accent    : #06b6d4;    // Cyan - Innovación
+
+// Neutral (Accessibility & Balance)
+$dark      : #0f1419;    // Gris muy profundo
+$dark-page : #020617;    // Negro profundo pero con vida
+
+// Semantic Colors (Estado y contexto)
+$positive  : #10b981;    // Verde esmeralda (Éxito, Confirmación)
+$negative  : #ef4444;    // Rojo suave (Error, Acción destructiva)
+$info      : #0ea5e9;    // Azul cielo (Información, Help)
+$warning   : #f59e0b;    // Ámbar (Alerta, Warning)
+
+// Extended Palette para riqueza cromática
+$primary-light: #5875ff;
+$primary-lighter: #7fa2ff;
+$primary-dark: #3730c7;
+$primary-darker: #2d23a5;
+
+$secondary-light: #ec5fa0;
+$secondary-lighter: #f17cb6;
+$secondary-dark: #b9267d;
+$secondary-darker: #97165b;
+
+$accent-light: #22d3ee;
+$accent-lighter: #a5f3fc;
+$accent-dark: #0891b2;
+$accent-darker: #0e7490;
+
+// Grises Neutros (Off-white y tonos grises cálidos/fríos)
+$neutral-50: #fafbfc;
+$neutral-100: #f3f5f7;
+$neutral-200: #e8ecf1;
+$neutral-300: #dce4eb;
+$neutral-400: #c5cfd9;
+$neutral-500: #a0adb8;
+$neutral-600: #8893a0;
+$neutral-700: #525a65;
+$neutral-800: #0f1419;
+$neutral-900: #020617;

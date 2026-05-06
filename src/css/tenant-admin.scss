@@ -1,0 +1,671 @@
+/**
+ * Tenant/Admin visual system.
+ * Shared surface, typography, form and action rules for tenant admins and teachers.
+ */
+
+.tenant-admin-layout {
+  --eg-bg: #f7f6fb;
+  --eg-sidebar: #ffffff;
+  --eg-header: rgba(255, 255, 255, 0.9);
+  --eg-surface: #ffffff;
+  --eg-surface-soft: #f1f4fb;
+  --eg-text: #0d1326;
+  --eg-text-soft: #263552;
+  --eg-muted: #64748f;
+  --eg-muted-2: #8a96ad;
+  --eg-border: #dfe5f0;
+  --eg-border-soft: #edf1f7;
+  --eg-primary: #2415f2;
+  --eg-primary-2: #5f29ff;
+  --eg-primary-soft: #edf2ff;
+  --eg-danger: #ef4444;
+  --eg-radius-sm: var(--tenant-radius-sm);
+  --eg-radius-md: var(--tenant-radius-md);
+  --eg-radius-lg: var(--tenant-radius-lg);
+  --eg-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --eg-shadow-md: 0 14px 34px rgba(15, 23, 42, 0.08);
+  --eg-shadow-lg: 0 22px 54px rgba(15, 23, 42, 0.13);
+  --tenant-radius-xs: 10px;
+  --tenant-radius-sm: 14px;
+  --tenant-radius-md: 18px;
+  --tenant-radius-lg: 22px;
+  --tenant-radius-xl: 28px;
+  --tenant-card-padding: var(--space-5);
+  --tenant-section-gap: var(--space-5);
+  --tenant-card-min: 126px;
+  --tenant-card-border: 1px solid var(--eg-border);
+  --tenant-card-bg: var(--eg-surface);
+  --tenant-card-shadow: var(--eg-shadow-md);
+  --tenant-card-shadow-hover: var(--eg-shadow-lg);
+  --tenant-title-size: clamp(1.55rem, 1.22rem + 0.55vw, 1.95rem);
+  --tenant-section-title-size: 1.05rem;
+  --tenant-body-size: 0.9rem;
+  --tenant-caption-size: 0.8125rem;
+  --tenant-control-height: 42px;
+  --tenant-control-radius: 999px;
+  --tenant-control-bg: #ffffff;
+  --tenant-control-border: var(--eg-border);
+  --tenant-control-focus: rgba(36, 21, 242, 0.12);
+  --tenant-blue-card: linear-gradient(135deg, #2415f2 0%, #4828ff 100%);
+  --tenant-cyan-card: linear-gradient(135deg, #0aa6c2 0%, #10a976 100%);
+  --tenant-pink-card: linear-gradient(135deg, #cf3f8e 0%, #5f29ff 100%);
+  --tenant-dark-card: linear-gradient(135deg, #14243a 0%, #0aa6c2 100%);
+}
+
+body.body--dark .tenant-admin-layout {
+  --eg-bg: #0d1020;
+  --eg-sidebar: #171827;
+  --eg-header: rgba(23, 24, 39, 0.9);
+  --eg-surface: #1b2036;
+  --eg-surface-soft: #222842;
+  --eg-text: #f5f7fb;
+  --eg-text-soft: #d4dbea;
+  --eg-muted: #96a3b8;
+  --eg-muted-2: #78869c;
+  --eg-border: rgba(214, 229, 245, 0.12);
+  --eg-border-soft: rgba(214, 229, 245, 0.08);
+  --eg-primary: #7c8cff;
+  --eg-primary-2: #ed67ae;
+  --eg-primary-soft: rgba(124, 140, 255, 0.14);
+  --tenant-card-bg: var(--eg-surface);
+  --tenant-card-border: 1px solid var(--eg-border);
+  --tenant-control-bg: var(--eg-surface-soft);
+  --tenant-control-border: var(--eg-border);
+  --tenant-control-focus: rgba(124, 140, 255, 0.18);
+}
+
+.tenant-admin-layout .page-shell-premium {
+  padding: var(--space-6) var(--space-8) var(--space-8);
+}
+
+.tenant-admin-layout .text-page-title {
+  font-size: var(--tenant-title-size);
+  letter-spacing: 0;
+}
+
+.tenant-admin-layout .text-page-subtitle {
+  color: var(--eg-muted);
+  font-size: var(--tenant-body-size);
+  max-width: 720px;
+}
+
+.tenant-admin-layout .q-btn {
+  border-radius: var(--tenant-control-radius);
+  font-weight: var(--font-weight-extrabold);
+  min-height: 40px;
+  padding-inline: var(--space-4);
+  text-transform: none;
+}
+
+.tenant-admin-layout .q-btn.q-btn--round {
+  border-radius: var(--radius-full);
+  min-height: 38px;
+  padding: 0;
+}
+
+.tenant-admin-layout .q-btn.bg-primary,
+.tenant-admin-layout .q-btn.text-primary.bg-primary {
+  box-shadow: 0 14px 32px rgba(36, 21, 242, 0.2);
+}
+
+.tenant-admin-layout .q-field--outlined .q-field__control {
+  background: var(--tenant-control-bg);
+  border-radius: var(--tenant-control-radius);
+  color: var(--eg-text);
+  min-height: var(--tenant-control-height);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.tenant-admin-layout .q-field--outlined .q-field__control::before {
+  border: 1px solid var(--tenant-control-border);
+  border-radius: inherit;
+}
+
+.tenant-admin-layout .q-field--outlined .q-field__control::after {
+  border: 1px solid var(--eg-primary);
+  border-radius: inherit;
+}
+
+.tenant-admin-layout .q-field--focused .q-field__control {
+  background: var(--eg-surface);
+  box-shadow: 0 0 0 4px var(--tenant-control-focus);
+}
+
+.tenant-admin-layout .q-field__native,
+.tenant-admin-layout .q-field__input,
+.tenant-admin-layout .q-field__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.tenant-admin-layout .q-field__label {
+  color: var(--eg-muted-2);
+  font-weight: var(--font-weight-semibold);
+}
+
+.tenant-admin-layout .q-field__prepend,
+.tenant-admin-layout .q-field__append {
+  color: var(--eg-muted-2);
+}
+
+.tenant-admin-layout .q-toggle__inner {
+  font-size: 42px;
+}
+
+.tenant-admin-layout .q-tabs {
+  background: var(--eg-surface-soft);
+  border-radius: var(--tenant-control-radius);
+  min-height: 46px;
+  padding: 4px;
+}
+
+.tenant-admin-layout .q-tab {
+  border-radius: var(--tenant-control-radius);
+  color: var(--eg-muted);
+  min-height: 38px;
+  padding-inline: var(--space-3);
+}
+
+.tenant-admin-layout .q-tab--active {
+  background: var(--eg-surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--eg-primary);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.tenant-admin-layout .q-tab__indicator {
+  display: none;
+}
+
+.tenant-admin-layout .q-drawer--right {
+  background: var(--eg-surface);
+  color: var(--eg-text);
+}
+
+/* =========================================================
+   EduGami Quasar Components Extension
+   Inputs, selects, menus, cards, drawers, lists, dialogs
+========================================================= */
+
+.tenant-admin-layout .q-layout,
+.tenant-admin-layout .q-page-container,
+.tenant-admin-layout .q-page {
+  background: var(--eg-bg);
+}
+
+.tenant-admin-layout .q-header,
+.tenant-admin-layout .q-toolbar {
+  background: var(--eg-header);
+  border-bottom: 1px solid var(--eg-border);
+  color: var(--eg-text);
+}
+
+.tenant-admin-layout .q-toolbar {
+  min-height: 72px;
+  padding-inline: var(--space-6);
+}
+
+.tenant-admin-layout .q-icon {
+  color: currentColor;
+}
+
+.tenant-admin-layout .q-avatar {
+  box-shadow: var(--eg-shadow-sm);
+}
+
+.tenant-admin-layout .q-field {
+  font-size: 0.92rem;
+}
+
+.tenant-admin-layout .q-field__control {
+  border-radius: 18px;
+  transition:
+    box-shadow 160ms var(--ease-out),
+    background-color 160ms var(--ease-out),
+    border-color 160ms var(--ease-out);
+}
+
+.tenant-admin-layout .q-field--filled .q-field__control,
+.tenant-admin-layout .q-field--outlined .q-field__control {
+  background: var(--eg-surface-soft);
+  border-radius: 18px;
+}
+
+.tenant-admin-layout .q-field--filled .q-field__control::before {
+  background: transparent;
+  border-bottom: 0;
+}
+
+.tenant-admin-layout .q-field--filled.q-field--focused .q-field__control,
+.tenant-admin-layout .q-field--outlined.q-field--focused .q-field__control {
+  background: var(--eg-surface);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--eg-primary) 12%, transparent);
+}
+
+.tenant-admin-layout .q-field__native,
+.tenant-admin-layout .q-field__input {
+  color: var(--eg-text);
+  font-weight: 650;
+}
+
+.tenant-admin-layout .q-field__label {
+  color: var(--eg-muted);
+  font-weight: 700;
+}
+
+.tenant-admin-layout .q-field--focused .q-field__label {
+  color: var(--eg-primary);
+}
+
+.tenant-admin-layout .q-field__prepend,
+.tenant-admin-layout .q-field__append {
+  color: var(--eg-muted);
+}
+
+.tenant-admin-layout .q-field--error .q-field__control {
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--eg-danger) 12%, transparent);
+}
+
+.tenant-admin-layout .q-field--error .q-field__label,
+.tenant-admin-layout .q-field--error .q-field__bottom {
+  color: var(--eg-danger);
+}
+
+.tenant-admin-layout .q-field--dense .q-field__control {
+  min-height: 40px;
+}
+
+.tenant-admin-layout .q-field--dense .q-field__marginal {
+  height: 40px;
+}
+
+.tenant-admin-layout .q-field--type-textarea .q-field__control {
+  border-radius: var(--eg-radius-md);
+  padding: 8px 2px;
+}
+
+.tenant-admin-layout .q-select .q-field__native {
+  font-weight: 750;
+}
+
+.tenant-admin-layout .q-select__dropdown-icon {
+  color: var(--eg-primary);
+}
+
+.tenant-admin-layout .q-menu {
+  background: var(--eg-surface);
+  border: 1px solid var(--eg-border);
+  border-radius: var(--eg-radius-md);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+  overflow: hidden;
+}
+
+.tenant-admin-layout .q-menu .q-list {
+  padding: var(--space-2);
+}
+
+.tenant-admin-layout .q-menu .q-item {
+  border-radius: var(--eg-radius-sm);
+  margin: 4px 0;
+  min-height: 42px;
+}
+
+.tenant-admin-layout .q-menu .q-item:hover {
+  background: var(--eg-primary-soft);
+  color: var(--eg-primary);
+}
+
+.tenant-admin-layout .q-menu .q-item--active {
+  background: var(--eg-primary-soft);
+  color: var(--eg-primary);
+}
+
+.tenant-admin-layout .q-list {
+  color: var(--eg-text);
+}
+
+.tenant-admin-layout .q-item__label {
+  font-weight: 750;
+}
+
+.tenant-admin-layout .q-item__label--caption {
+  color: var(--eg-muted);
+  font-weight: 600;
+}
+
+.tenant-admin-layout .q-item__section--avatar {
+  min-width: 44px;
+}
+
+.tenant-admin-layout .q-card {
+  background: var(--eg-surface);
+  border: 1px solid var(--eg-border);
+  border-radius: var(--eg-radius-lg);
+  box-shadow: var(--eg-shadow-sm);
+}
+
+.tenant-admin-layout .q-card__section {
+  padding: var(--space-5);
+}
+
+.tenant-admin-layout .q-card__actions {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+
+.tenant-admin-layout .q-card--bordered {
+  border: 1px solid var(--eg-border);
+}
+
+.tenant-admin-layout .q-separator {
+  background: var(--eg-border);
+}
+
+.tenant-admin-layout .q-chip {
+  border-radius: 999px;
+  font-weight: 850;
+  min-height: 28px;
+  padding-inline: 10px;
+}
+
+.tenant-admin-layout .q-chip.bg-primary,
+.tenant-admin-layout .q-chip.text-primary {
+  background: var(--eg-primary-soft) !important;
+  color: var(--eg-primary) !important;
+}
+
+.tenant-admin-layout .q-badge {
+  border-radius: 999px;
+  font-weight: 900;
+  padding: 5px 9px;
+}
+
+.tenant-admin-layout .q-toggle__track {
+  background: color-mix(in srgb, var(--eg-muted) 28%, transparent);
+  opacity: 1;
+}
+
+.tenant-admin-layout .q-toggle__thumb {
+  box-shadow: var(--eg-shadow-sm);
+}
+
+.tenant-admin-layout .q-toggle[aria-checked="true"] .q-toggle__track,
+.tenant-admin-layout .q-toggle.text-primary .q-toggle__track {
+  background: linear-gradient(135deg, var(--eg-primary), var(--eg-primary-2));
+}
+
+.tenant-admin-layout .q-checkbox__bg,
+.tenant-admin-layout .q-radio__inner {
+  color: var(--eg-primary);
+}
+
+.tenant-admin-layout .q-checkbox__label,
+.tenant-admin-layout .q-radio__label {
+  color: var(--eg-text);
+  font-weight: 700;
+}
+
+.tenant-admin-layout .q-slider__track-container {
+  background: color-mix(in srgb, var(--eg-muted) 24%, transparent);
+}
+
+.tenant-admin-layout .q-slider__selection,
+.tenant-admin-layout .q-slider__thumb {
+  color: var(--eg-primary);
+}
+
+.tenant-admin-layout .q-dialog__inner > .q-card {
+  border-radius: 28px;
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.22);
+}
+
+.tenant-admin-layout .q-dialog__backdrop {
+  backdrop-filter: blur(4px);
+  background: rgba(15, 18, 38, 0.42);
+}
+
+.tenant-admin-layout .q-drawer {
+  padding-top: 8px;
+  background: var(--eg-sidebar);
+}
+
+.tenant-admin-layout .q-drawer .q-item__section--side {
+  color: inherit;
+}
+
+.tenant-admin-layout .q-drawer .q-item:hover {
+  background: var(--eg-primary-soft);
+  color: var(--eg-primary);
+}
+
+.tenant-admin-layout .q-drawer .q-item--active .q-icon,
+.tenant-admin-layout .q-drawer .q-router-link--active .q-icon {
+  color: var(--eg-primary);
+}
+
+.tenant-admin-layout .q-expansion-item {
+  border-radius: var(--eg-radius-md);
+  overflow: hidden;
+}
+
+.tenant-admin-layout .q-expansion-item__container {
+  background: var(--eg-surface);
+  border: 1px solid var(--eg-border);
+  border-radius: var(--eg-radius-md);
+}
+
+.tenant-admin-layout .q-expansion-item .q-item {
+  border-radius: var(--eg-radius-md);
+}
+
+.tenant-admin-layout .q-table {
+  background: var(--eg-surface);
+}
+
+.tenant-admin-layout .q-table tbody tr {
+  transition: background-color 140ms var(--ease-out);
+}
+
+.tenant-admin-layout .q-table tbody tr:hover {
+  background: color-mix(in srgb, var(--eg-primary) 4%, transparent);
+}
+
+.tenant-admin-layout .q-table__top {
+  padding: var(--space-5);
+}
+
+.tenant-admin-layout .q-table__bottom {
+  color: var(--eg-muted);
+  font-weight: 700;
+  padding: var(--space-4) var(--space-5);
+}
+
+.tenant-admin-layout .q-pagination .q-btn {
+  min-height: 36px;
+  min-width: 36px;
+  padding-inline: 0;
+}
+
+.tenant-admin-layout .q-pagination .q-btn.bg-primary {
+  box-shadow: 0 8px 20px rgba(36, 21, 242, 0.22);
+}
+
+.tenant-admin-layout .q-notification {
+  border-radius: 20px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
+  font-weight: 700;
+}
+
+.tenant-admin-layout ::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.tenant-admin-layout ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tenant-admin-layout ::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--eg-muted) 50%, transparent);
+  background-clip: content-box;
+  border: 3px solid transparent;
+  border-radius: 999px;
+}
+
+.tenant-admin-layout ::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--eg-muted) 70%, transparent);
+  background-clip: content-box;
+}
+
+.tenant-page-head,
+.tenant-surface-card,
+.tenant-workspace-card {
+  background: var(--tenant-card-bg);
+  border: var(--tenant-card-border);
+  border-radius: var(--tenant-radius-lg);
+  box-shadow: var(--tenant-card-shadow);
+}
+
+.tenant-page-head {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr auto;
+  padding: 0;
+}
+
+.tenant-section-kicker {
+  align-items: center;
+  color: var(--color-primary);
+  display: inline-flex;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-extrabold);
+  gap: var(--space-2);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.tenant-head-actions {
+  align-items: center;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.tenant-search {
+  min-width: min(340px, 40vw);
+}
+
+.tenant-metric-card {
+  background: var(--tenant-card-bg);
+  border: var(--tenant-card-border);
+  border-radius: var(--tenant-radius-lg);
+  box-shadow: var(--tenant-card-shadow);
+  min-height: var(--tenant-card-min);
+  padding: var(--tenant-card-padding);
+}
+
+.tenant-entity-card {
+  background: var(--tenant-card-bg);
+  border: var(--tenant-card-border);
+  border-radius: var(--tenant-radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.tenant-entity-card:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 24%, var(--color-border-default));
+  box-shadow: var(--tenant-card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.tenant-editor-drawer {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.tenant-editor-shell {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+}
+
+.tenant-editor-head {
+  align-items: flex-start;
+  background:
+    radial-gradient(circle at 84% 18%, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent 30%),
+    var(--color-surface-strong);
+  border-bottom: 1px solid var(--color-border-subtle);
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: auto 1fr auto;
+  padding: var(--space-5);
+}
+
+.tenant-editor-head h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.tenant-editor-head p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+}
+
+.tenant-editor-icon {
+  align-items: center;
+  background: var(--gradient-primary);
+  border-radius: var(--tenant-radius-sm);
+  color: #fff;
+  display: flex;
+  height: 46px;
+  justify-content: center;
+  width: 46px;
+}
+
+.tenant-editor-form {
+  align-content: start;
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  overflow: auto;
+  padding: var(--space-5);
+}
+
+.tenant-editor-actions {
+  align-items: center;
+  background: var(--color-surface-strong);
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  padding: var(--space-4) var(--space-5);
+}
+
+@media (max-width: 900px) {
+  .tenant-admin-layout .page-shell-premium {
+    padding: var(--space-4);
+  }
+
+  .tenant-page-head {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .tenant-head-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tenant-search {
+    min-width: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,175 @@
+/**
+ * EDUGAMI - Global Design Tokens
+ * Root contract for color, type, spacing, elevation, motion and compatibility.
+ */
+
+:root {
+  color-scheme: light;
+
+  --font-family-display: "Inter", "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --font-family-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-family-mono: "Fira Code", "SFMono-Regular", Consolas, monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.563rem;
+  --font-size-2xl: 1.953rem;
+  --font-size-3xl: 2.441rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.18;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+  --letter-spacing-tight: 0;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0;
+
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 999px;
+
+  --duration-fast: 150ms;
+  --duration-base: 260ms;
+  --duration-slow: 420ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-color: background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+  --transition-move: transform var(--duration-base) var(--ease-out),
+    opacity var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+  --transition-fast: transform var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+  --transition-base: var(--transition-color);
+  --transition-slow: background-color var(--duration-slow) var(--ease-out),
+    border-color var(--duration-slow) var(--ease-out),
+    color var(--duration-slow) var(--ease-out),
+    box-shadow var(--duration-slow) var(--ease-out);
+
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-notification: 800;
+
+  --color-light-bg-primary: #f7f8fd;
+  --color-light-bg-secondary: #eef2fb;
+  --color-light-bg-tertiary: #e5ebf7;
+  --color-light-surface: rgba(255, 255, 255, 0.9);
+  --color-light-surface-strong: #ffffff;
+  --color-light-text-primary: #101426;
+  --color-light-text-secondary: #53617a;
+  --color-light-text-tertiary: #8490a7;
+  --color-light-border-subtle: rgba(35, 48, 74, 0.1);
+  --color-light-border-default: rgba(35, 48, 74, 0.18);
+
+  --color-dark-bg-primary: #0d1020;
+  --color-dark-bg-secondary: #14182a;
+  --color-dark-bg-tertiary: #1e2440;
+  --color-dark-surface: rgba(25, 29, 48, 0.78);
+  --color-dark-surface-strong: #1b2036;
+  --color-dark-text-primary: #f3f7fb;
+  --color-dark-text-secondary: #bdc9d8;
+  --color-dark-text-tertiary: #8ea0b5;
+  --color-dark-border-subtle: rgba(214, 229, 245, 0.1);
+  --color-dark-border-default: rgba(214, 229, 245, 0.18);
+
+  --color-primary-50: #eef3ff;
+  --color-primary-100: #dbe6ff;
+  --color-primary-300: #7ca0ff;
+  --color-primary-500: #2415f2;
+  --color-primary-600: #1d12c9;
+  --color-primary-700: #17106f;
+  --color-secondary-500: #cf3f8e;
+  --color-accent-500: #0aa6c2;
+  --color-success: #10a976;
+  --color-warning: #d99014;
+  --color-error: #df4646;
+  --color-info: #168ccf;
+
+  --gradient-primary: linear-gradient(135deg, #2517f2 0%, #5f29ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #cf3f8e 0%, #7c5cff 100%);
+  --gradient-accent: linear-gradient(135deg, #0aa6c2 0%, #10a976 100%);
+  --gradient-vibrant: linear-gradient(135deg, #2517f2 0%, #0aa6c2 48%, #cf3f8e 100%);
+
+  --shadow-sm: 0 1px 2px rgba(20, 22, 31, 0.05);
+  --shadow-md: 0 10px 28px rgba(21, 30, 57, 0.08);
+  --shadow-lg: 0 22px 48px rgba(21, 30, 57, 0.12);
+  --shadow-xl: 0 32px 70px rgba(21, 30, 57, 0.16);
+  --shadow-glow: 0 18px 44px rgba(36, 21, 242, 0.18);
+}
+
+body:not(.body--dark) {
+  --color-bg-primary: var(--color-light-bg-primary);
+  --color-bg-secondary: var(--color-light-bg-secondary);
+  --color-bg-tertiary: var(--color-light-bg-tertiary);
+  --color-surface: var(--color-light-surface);
+  --color-surface-strong: var(--color-light-surface-strong);
+  --color-text-primary: var(--color-light-text-primary);
+  --color-text-secondary: var(--color-light-text-secondary);
+  --color-text-tertiary: var(--color-light-text-tertiary);
+  --color-border-subtle: var(--color-light-border-subtle);
+  --color-border-default: var(--color-light-border-default);
+  --color-border: var(--color-light-border-subtle);
+  --color-text: var(--color-light-text-primary);
+  --color-primary: var(--color-primary-500);
+  --color-secondary: var(--color-secondary-500);
+  --color-accent: var(--color-accent-500);
+  --shadow-default: var(--shadow-md);
+  --primary-gradient: var(--gradient-primary);
+  --secondary-gradient: var(--gradient-secondary);
+}
+
+body.body--dark {
+  color-scheme: dark;
+
+  --color-bg-primary: var(--color-dark-bg-primary);
+  --color-bg-secondary: var(--color-dark-bg-secondary);
+  --color-bg-tertiary: var(--color-dark-bg-tertiary);
+  --color-surface: var(--color-dark-surface);
+  --color-surface-strong: var(--color-dark-surface-strong);
+  --color-text-primary: var(--color-dark-text-primary);
+  --color-text-secondary: var(--color-dark-text-secondary);
+  --color-text-tertiary: var(--color-dark-text-tertiary);
+  --color-border-subtle: var(--color-dark-border-subtle);
+  --color-border-default: var(--color-dark-border-default);
+  --color-border: var(--color-dark-border-subtle);
+  --color-text: var(--color-dark-text-primary);
+  --color-primary: #7c8cff;
+  --color-secondary: #ed67ae;
+  --color-accent: #42d5e8;
+  --shadow-default: 0 18px 44px rgba(0, 0, 0, 0.38);
+  --shadow-glow: 0 18px 42px rgba(66, 213, 232, 0.14);
+  --primary-gradient: linear-gradient(135deg, #7c8cff 0%, #42d5e8 100%);
+  --secondary-gradient: linear-gradient(135deg, #ed67ae 0%, #9a7cff 100%);
+}
